@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nexus.test</groupId>
+	<artifactId>nexus-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nexus.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<!-- 配置项目jar包deploy到maven私服nexus -->
+	<!-- 在maven setting文件中配置账户 -->
+	<distributionManagement>
+		<repository>
+			<id>release</id>
+			<name>Internal Release</name>
+			<url>http://192.168.211.128:8081/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://192.168.211.128:8081/repository/maven-snapshots//</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
